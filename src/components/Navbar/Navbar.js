@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
-import Fade from 'react-reveal/Fade';
 import { IoMenuSharp, IoHomeSharp } from 'react-icons/io5';
 import { HiDocumentText } from 'react-icons/hi';
 import { BsFillGearFill } from 'react-icons/bs';
@@ -10,6 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CloseIcon from '@material-ui/icons/Close';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
+import Slide from '@material-ui/core/Slide';
 
 import './Navbar.css';
 import { headerData } from '../../data/headerData';
@@ -201,7 +201,7 @@ function Navbar() {
 
                 <div onClick={handleDrawerClose}>
                     <div className='navLink--container'>
-                        <Fade left>
+                        <Slide direction='left' in >
                             <NavLink
                                 to='/'
                                 smooth={true}
@@ -217,9 +217,10 @@ function Navbar() {
                                     </span>
                                 </div>
                             </NavLink>
-                        </Fade>
+                        </Slide>
 
-                        <Fade left>
+
+                        <Slide direction='left' in >
                             <NavLink
                                 to='/#about'
                                 smooth={true}
@@ -233,9 +234,10 @@ function Navbar() {
                                     </span>
                                 </div>
                             </NavLink>
-                        </Fade>
+                        </Slide>
 
-                        <Fade left>
+
+                        <Slide direction='left' in >
                             <NavLink
                                 to='/#skills'
                                 smooth={true}
@@ -251,9 +253,10 @@ function Navbar() {
                                     </span>
                                 </div>
                             </NavLink>
-                        </Fade>
+                        </Slide>
 
-                        <Fade left>
+
+                        <Slide direction='left' in >
                             <NavLink
                                 to='/#projects'
                                 smooth={true}
@@ -269,25 +272,29 @@ function Navbar() {
                                     </span>
                                 </div>
                             </NavLink>
-                        </Fade>
+                        </Slide>
 
-                        <Fade left>
-                                <a
-                                    href={resumePdf}
-                                    download='Anirudh Mittal Resume'
-                                    target='_blank'
-                                    rel='noreferrer'
-                                >
-                                    <div className={classes.drawerItem}>
-                                        <HiDocumentText
-                                            className={classes.drawerIcon}
-                                        />
-                                        <span className={classes.drawerLinks}>
-                                            Resume
-                                        </span>
-                                    </div>
-                                </a>
-                        </Fade>
+
+                        <Slide direction='left' in >
+                            <a
+                                href={resumePdf}
+                                download='Anirudh Mittal Resume'
+                                target='_blank'
+                                rel='noreferrer'
+                            >
+                                <div className={classes.drawerItem}>
+                                    <HiDocumentText
+                                        className={classes.drawerIcon}
+                                    />
+                                    <span className={classes.drawerLinks}>
+                                        Resume
+                                    </span>
+                                </div>
+                            </a>
+                        </Slide>
+
+
+
 
                         {/*<Fade left>
                             <NavLink
@@ -325,7 +332,7 @@ function Navbar() {
                             </NavLink>
                 </Fade>*/}
 
-                        <Fade left>
+                        <Slide direction='left' in={true} >
                             <NavLink
                                 to='/#contacts'
                                 smooth={true}
@@ -339,7 +346,7 @@ function Navbar() {
                                     </span>
                                 </div>
                             </NavLink>
-                        </Fade>
+                        </Slide>
                     </div>
                 </div>
             </Drawer>

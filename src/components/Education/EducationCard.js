@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Fade from 'react-reveal/Fade';
 
 import { ThemeContext } from '../../contexts/ThemeContext';
 
@@ -24,7 +23,6 @@ function EducationCard({ id, institution, course, startYear, endYear, grade, str
     const classes = useStyles();
 
     return (
-        <Fade bottom>
             <div key={id} className={`education-card ${classes.educationCard}`} >
                 <div className="educard-img" style={{ backgroundColor: theme.primary,flex: '1 0 auto' }}>
                     <img src={theme.type === 'light' ? eduImgBlack : eduImgWhite} alt="" />
@@ -40,7 +38,6 @@ function EducationCard({ id, institution, course, startYear, endYear, grade, str
                     <h5 style={{ color: theme.tertiary80 }}>{stream}</h5>
                 </div>
             </div>
-        </Fade>
     )
 }
 
